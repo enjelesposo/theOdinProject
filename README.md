@@ -1,2 +1,2 @@
 # theOdinProject
-All of my projects for the Odin Project goes here
+All of my projects for The Odin Project goes here
