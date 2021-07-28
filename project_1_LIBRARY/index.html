@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+        integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="navbar">
+        <button class="form-toggle"><i class="las la-plus"></i></button>
+    </div>
+
+    <div class="book-form-outer">
+        <form>
+            <div class="field">
+                <label for="book_title">Title</label>
+                <input type="text" name="book_title" id="book_title">
+            </div>
+            <div class="field">
+                <label for="book_author">Author</label>
+                <input type="text" name="book_author" id="book_author">
+            </div>
+            <div class="field">
+                <label for="book_snippet">Snippet</label>
+                <input type="text" name="book_snippet" id="book_snippet">
+            </div>
+            <div class="field">
+                <label for="book_image">Image Link</label>
+                <input type="text" name="book_image" id="book_image">
+            </div>
+            <div class="field">
+                <label for="book_status">Have you read the book? </label>
+                <input type="checkbox" name="book_status" id="book_status">
+            </div>
+            <button class="add-button" type="submit">ADD BOOK</button>
+        </form>
+    </div>
+
+    <h1>Library</h1>
+    <div class="container">
+        
+    </div>
+</body>
+<script src="./app.js"></script>
+</html>
