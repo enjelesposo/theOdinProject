@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: #eee;
 }
 
 h1,
@@ -25,9 +26,21 @@ i {
   pointer-events: none;
 }
 
+.top-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-color: white;
+  box-shadow: -1px 4px 12px -5px rgba(0, 0, 0, 0.67);
+  -webkit-box-shadow: -1px 4px 12px -5px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: -1px 4px 12px -5px rgba(0, 0, 0, 0.67);
+}
+
 .header {
   width: max-content;
-  margin: 10vh auto;
+  margin: 0 auto;
   line-height: 0.4;
 }
 
@@ -44,22 +57,22 @@ i {
   color: rgb(195, 195, 195);
 }
 
+/*********** Form Toggler **********/
+
 .toggle-wrapper {
   text-align: center;
 }
 .toggle-wrapper button {
   border: none;
-  border-radius: 20px;
-  background-color: lightgray;
-  padding: 5px 8px;
-  font-size: 28px;
-  font-weight: 500;
+  background-color: transparent;
+  font-size: 32px;
+  font-weight: 800;
+  color: #2832c2;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .toggle-wrapper button:hover {
-  background-color: black;
-  color: #fff;
+  color: #000;
 }
 
 /*********** Book Input Form **********/
@@ -147,7 +160,7 @@ i {
 /*********** Book List **********/
 .container {
   width: 100%;
-  margin: 40px 20px;
+  margin: 120px 20px;
 }
 
 .card {
@@ -157,7 +170,7 @@ i {
   padding: 20px;
   width: 60%;
   height: 380px;
-  background-color: rgba(238, 238, 238, 0.3);
+  background-color: #fff;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: -1px 4px 9px -5px rgba(0, 0, 0, 0.54);

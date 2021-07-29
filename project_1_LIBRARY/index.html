@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ICON -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
         integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Raleway&display=swap"
         rel="stylesheet">
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+
     <link rel="stylesheet" href="style.css">
-    <title>Library</title>
+    <title>Library App</title>
 </head>
 <body>
-    <div class="header">
-        <h1 class="title">Welcome to my library!</h1>
-        <h1 class="sub-title">Add your favourite books.</h1>
-        <h1 class="sub-sub-title">Store them in the cloud.</h1>
+    <div class="top-section">
+        <div class="header">
+            <h1 class="title">Welcome to my library!</h1>
+            <h1 class="sub-title">Keep track of your reading.</h1>
+            <h1 class="sub-sub-title">Add your favourite books.</h1>
+        </div>
+        
+        <div class="toggle-wrapper">
+            <button class="toggle" onclick="toggleForm()"><i class="las la-plus"></i> ADD BOOK</button>
+        </div>
     </div>
 
-    <div class="toggle-wrapper">
-        <button class="toggle" onclick="toggleForm()"><i class="las la-plus"></i> ADD BOOK</button>
-    </div>
-
-    <div class="book-form-container active">
+    <div class="book-form-container">
         <div class="book-form-inner">
             <h3>Add a Book</h3>
             <form>

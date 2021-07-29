@@ -1,5 +1,17 @@
 let myLibrary = [
     {
+        title: "Homo Deus",
+        author: 'Yuval Noah Harari',
+        snippet: 'Yuval Noah Harari, author of the critically-acclaimed New York Times bestseller and international phenomenon Sapiens, returns with an equally original, compelling, and provocative book, turning his focus toward humanity’s future, and our quest to upgrade humans into gods.',
+        image: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1455858241l/28092870._SY475_.jpg'
+    },
+    {
+        title: 'Flow: The Psychology of Optimal Experience',
+        author: 'Mihaly Csikszentmihalyi',
+        snippet: 'During flow, people typically experience deep enjoyment, creativity, and a total involvement with life. In this new edition of his groundbreaking classic work, Csikszentmihalyi ("the leading researcher into ‘flow states’" —Newsweek) demonstrates the ways this positive state can be controlled, not just left to chance. Flow: The Psychology of Optimal Experience teaches how, by ordering the information that enters our consciousness, we can discover true happiness, unlock our potential, and greatly improve the quality of our lives.',
+        image: 'https://images-na.ssl-images-amazon.com/images/I/71XvcOz-HlL.jpg'
+    },
+    {
         title: 'The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living',
         author: 'Ryan Holiday',
         snippet: 'From the team that brought you The Obstacle Is the Way and Ego Is the Enemy, a beautiful daily devotional of Stoic meditations—an instant Wall Street Journal and USA Today Bestseller.',
@@ -8,14 +20,20 @@ let myLibrary = [
     {
         title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
         author: 'James Clear',
-        snippet: 'No matter your goals, Atomic Habits offers a proven framework for improving--every day.',
+        snippet: 'No matter your goals, Atomic Habits offers a proven framework for improving--every day. James Clear, one of the world\'s leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.',
         image: 'https://images-na.ssl-images-amazon.com/images/I/51vSbWpF+dS._SX329_BO1,204,203,200_.jpg'
     },
     {
-        title: 'How to Win Friends & Influence People',
-        author: 'Dale Carnegie',
-        snippet: 'Dale Carnegie’s rock-solid, time-tested advice has carried countless people up the ladder of success in their business and personal lives.',
-        image: 'https://images-na.ssl-images-amazon.com/images/I/51X7dEUFgoL._SX320_BO1,204,203,200_.jpg'
+        title: 'The Hobbit, or There and Back Again',
+        author: 'J. R. R. Tolkien',
+        snippet: 'Written for J.R.R. Tolkien’s own children, The Hobbit met with instant critical acclaim when it was first published in 1937. Now recognized as a timeless classic, this introduction to the hobbit Bilbo Baggins, the wizard Gandalf, Gollum, and the spectacular world of Middle-earth recounts of the adventures of a reluctant hero, a powerful and dangerous ring, and the cruel dragon Smaug the Magnificent.',
+        image: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546071216l/5907.jpg'
+    },
+    {
+        title: 'Sapiens: A Brief History of Humankind',
+        author: 'Yuval Noah Harari',
+        snippet: 'In Sapiens, Dr Yuval Noah Harari spans the whole of human history, from the very first humans to walk the earth to the radical – and sometimes devastating – breakthroughs of the Cognitive, Agricultural and Scientific Revolutions. Drawing on insights from biology, anthropology, paleontology and economics, he explores how the currents of history have shaped our human societies, the animals and plants around us, and even our personalities. Have we become happier as history has unfolded? Can we ever free our behaviour from the heritage of our ancestors? And what, if anything, can we do to influence the course of the centuries to come?',
+        image: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1427068429l/23346740.jpg'
     }
 ]
 
@@ -85,6 +103,18 @@ function toggleForm() {
     bookForm.classList.toggle('active');
 }
 
+// toggle read status
+function toggleRead(id) {
+    if(myLibrary[id].readStatus == true) {
+        myLibrary[id].readStatus = false;
+    }
+    else {
+        myLibrary[id].readStatus = true;
+    }
+
+    renderLibrary();
+}
+
 // Create elements for book
 function renderBook(book, index) {
 
@@ -121,7 +151,8 @@ function renderBook(book, index) {
     bookRead.innerText = `${book.readStatus ? 'read' : 'not read'}`
 
     /************* Styles *************/
-    bookRead.style.backgroundColor = `${book.readStatus ? 'rgba(0, 153, 51, 0.2)' : 'rgb(0, 153, 51)'}`
+    bookRead.style.backgroundColor = `${book.readStatus ? 'rgba(0, 153, 51, 0.3)' : 'rgb(0, 153, 51)'}`
+    bookRead.style.color = `${book.readStatus ? 'rgb(0, 153, 51)' : '#fff'}`
 
     // Append Elements to Parent Div
     bookInfoDiv.appendChild(bookTitle);
@@ -138,6 +169,11 @@ function renderBook(book, index) {
         removeBook(id);
     })
 
+    bookRead.addEventListener("click", e => {
+        let bookInfo = e.target.parentNode;
+        let id =bookInfo.parentNode.getAttribute("data-id");
+        toggleRead(id);
+    })
 }
 
 function renderLibrary() {
@@ -147,4 +183,4 @@ function renderLibrary() {
     })
 }
 
-renderLibrary();
+renderLibrary();    
