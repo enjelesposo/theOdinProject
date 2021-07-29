@@ -1,3 +1,196 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h3,
+h4,
+button {
+  font-family: "Poppins", Arial, Helvetica;
+}
+
+p,
+li,
+a,
+span,
+input,
+label,
+textarea {
+  font-family: "Raleway", Arial, Helvetica;
+}
+
 i {
   pointer-events: none;
+}
+
+.header {
+  width: max-content;
+  margin: 10vh auto;
+  line-height: 0.4;
+}
+
+.title,
+.sub-title,
+.sub-sub-title {
+  font-size: 72px;
+  font-weight: 800;
+}
+.sub-title {
+  color: rgb(165, 165, 165);
+}
+.sub-sub-title {
+  color: rgb(195, 195, 195);
+}
+
+.toggle-wrapper {
+  text-align: center;
+}
+.toggle-wrapper button {
+  border: none;
+  border-radius: 20px;
+  background-color: lightgray;
+  padding: 5px 8px;
+  font-size: 28px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.toggle-wrapper button:hover {
+  background-color: black;
+  color: #fff;
+}
+
+/*********** Book Input Form **********/
+
+.book-form-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(51, 51, 51, 0.212);
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.book-form-container.active {
+  display: flex;
+}
+
+.book-form-inner {
+  background: #fff;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  position: relative;
+}
+
+.book-form-inner h3 {
+  text-align: center;
+  font-size: 22px;
+}
+
+.book-form-inner .close-form-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  color: #ccc;
+  border: none;
+  font-size: 34px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-form-inner .close-form-button:hover {
+  color: #333;
+}
+
+.book-form-inner form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.book-form-inner .field {
+  width: 100%;
+  margin: 20px;
+}
+
+.book-form-inner form input {
+  max-width: 450px;
+  width: 100%;
+  padding: 8px;
+}
+
+.book-form-inner form label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.book-form-inner .add-button {
+  display: block;
+  max-width: 200px;
+  width: 100%;
+  height: 30px;
+  margin: 30px auto 10px auto;
+  background-color: #000;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/*********** Book List **********/
+.container {
+  width: 100%;
+  margin: 40px 20px;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  margin: 30px auto;
+  padding: 20px;
+  width: 60%;
+  height: 380px;
+  background-color: rgba(238, 238, 238, 0.3);
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: -1px 4px 9px -5px rgba(0, 0, 0, 0.54);
+  -webkit-box-shadow: -1px 4px 9px -5px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: -1px 4px 9px -5px rgba(0, 0, 0, 0.54);
+}
+
+.card .book-info {
+  margin: 10px 40px;
+}
+
+.card .remove-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.card .remove-button:hover {
+  opacity: 1;
+}
+
+.card .book-status {
+  margin: 20px 0;
+  border: 1px solid rgb(0, 153, 51);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
 }
