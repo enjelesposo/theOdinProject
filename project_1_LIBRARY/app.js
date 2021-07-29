@@ -42,7 +42,6 @@ function Book (title, author, snippet, image, readStatus) {
 document.querySelector('.add-button').addEventListener('click', e => {
     e.preventDefault();
     addBookToLibrary();
-    console.log(myLibrary)
     clearInput();
 })
 
@@ -58,6 +57,7 @@ function addBookToLibrary() {
         let newBook = new Book(inputTitle.value, inputAuthor.value, inputSnippet.value, inputImage.value, inputRead.checked);
         myLibrary.push(newBook);
     }
+    toggleForm();
     renderLibrary();
 }   
 
@@ -79,6 +79,12 @@ function removeBook(id) {
     renderLibrary();
 }
 
+// toggle book form
+function toggleForm() {
+    let bookForm = document.querySelector('.book-form-container');
+    bookForm.classList.toggle('active');
+}
+
 // Create elements for book
 function renderBook(book, index) {
 
@@ -88,10 +94,10 @@ function renderBook(book, index) {
     let bookInfoDiv = document.createElement('div');
     let bookImage = document.createElement('img');
     let removeButton = document.createElement('button');
-    let bookTitle = document.createElement('h3');
+    let bookTitle = document.createElement('h4');
     let bookAuthor = document.createElement('p');
     let bookSnippet = document.createElement('p');
-    let bookRead = document.createElement('p');
+    let bookRead = document.createElement('button');
 
     
     /************* Classes & Data Attributes *************/
@@ -113,6 +119,9 @@ function renderBook(book, index) {
     bookAuthor.innerText = `by ${book.author}`;
     bookSnippet.innerText = book.snippet;
     bookRead.innerText = `${book.readStatus ? 'read' : 'not read'}`
+
+    /************* Styles *************/
+    bookRead.style.backgroundColor = `${book.readStatus ? 'rgba(0, 153, 51, 0.2)' : 'rgb(0, 153, 51)'}`
 
     // Append Elements to Parent Div
     bookInfoDiv.appendChild(bookTitle);
